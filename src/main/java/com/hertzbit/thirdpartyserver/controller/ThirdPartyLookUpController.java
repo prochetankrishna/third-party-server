@@ -26,6 +26,7 @@ public class ThirdPartyLookUpController {
     @PostMapping("/internal/lookup")
     public ResponseEntity<?> performLookUp(@RequestBody OnPremRequest onPremRequest) throws URISyntaxException {
         LOGGER.info("Request Received for : " + onPremRequest.getPhoneNumber());
+        System.out.println("HELLO");
         LookUpResponse lookUpResponse = this.thirdPartyLookUpService.
                 performLookUp(onPremRequest);
         return new ResponseEntity<>(lookUpResponse, HttpStatus.OK);
